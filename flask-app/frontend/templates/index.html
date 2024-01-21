@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click-Me App</title>
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/index.css') }}">
+  </head>
+  <body>
+    <h1> Click any of the two buttons to generate events for GCP DataFlow Event Capture </h1>
+    <form action="/generate_event" method="post">
+        <button type="submit" name="button_id" value="button1">Generate Event 1</button>
+        <button type="submit" name="button_id" value="button2">Generate Event 2</button>
+    </form>
+    {% if event_info %}
+        <p>{{ event_info }}</p>
+    {% endif %}
+  </body>
+</html>
